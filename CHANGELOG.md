@@ -1,7 +1,17 @@
 # Changelog
 
-All notable changes to `bayar` will be documented in this file
+All notable changes to `laraditz/bayar` will be documented in this file
 
-## 1.0.0 - 201X-XX-XX
+## 0.0.0 - 2023-08-30
 
-- initial release
+- Initial release
+
+### Added
+- Setup laravel service provider and related laravel package files.
+- Add `BayarPayment`, `BayarCallback`, `BayarRequest` models and related migrations.
+- Add `BayarController` controller and view files.
+- Add `PaymentStatus` enum.
+- Add `ProviderInterface` contract.
+- Add `PaymentData` and `PaymentResponseData` DTO.
+- Add `AtomeCallbackReceived` event.
+- Add `Atome` provider.
