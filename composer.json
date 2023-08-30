@@ -1,0 +1,55 @@
+{
+    "name": "laraditz/bayar",
+    "description": "Expressive and fluent interface to multiple payment gateways.",
+    "keywords": [
+        "laraditz",
+        "bayar"
+    ],
+    "homepage": "https://github.com/laraditz/bayar",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Raditz Farhan",
+            "email": "raditzfarhan@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "laravel/framework": "^9.0|^10.0",
+        "gerbang-bayar/support": "dev-develop"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Laraditz\\Bayar\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Laraditz\\Bayar\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laraditz\\Bayar\\BayarServiceProvider"
+            ],
+            "aliases": {
+                "Bayar": "Laraditz\\Bayar\\BayarFacade"
+            }
+        }
+    }
+}
