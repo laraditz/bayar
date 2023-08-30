@@ -18,7 +18,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "laravel/framework": "^9.0|^10.0",
-        "gerbang-bayar/support": "dev-develop"
+        "gerbang-bayar/support": "^0.0"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
