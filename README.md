@@ -1,3 +1,5 @@
+![Laravel Bayar](./Banner.png)
+
 # Laravel Bayar
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laraditz/bayar.svg?style=flat-square)](https://packagist.org/packages/laraditz/bayar)
