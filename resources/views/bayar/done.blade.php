@@ -24,8 +24,8 @@
                 Payment is {{ $paymentData->status?->name }}
             </h1>
 
-            @if($paymentData->status_description)
-            <h3 class="text-sm sm:text-base lg:text-lg font-medium">{{ $paymentData->status_description }}</h3>
+            @if($paymentData?->statusDescription)
+            <h3 class="text-sm sm:text-base lg:text-lg font-medium">{{ $paymentData->statusDescription }}</h3>
             @endif
 
             @if($payment)

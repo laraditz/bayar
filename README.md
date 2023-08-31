@@ -16,13 +16,19 @@ You can install the package via composer:
 composer require laraditz/bayar
 ```
 
-Then install the payment gateway provider that you wish to use. See [supported providers](#supported-providers) section to see list of all available providers. 
-For example, if you want to use Atome payment gateway, you can simply install it as below:-
+Run the migration command to create the necessary database table.
+
 ```bash
-composer require gerbang-bayar/atome
+php artisan migrate
 ```
 
-Go to respective provider's repository to see how to complete the setup.
+Then install the payment gateway provider that you wish to use. See [supported providers](#supported-providers) section to see list of all available providers. 
+
+```bash
+composer require gerbang-bayar/provider-name
+```
+
+Go to respective provider's repository to see how to set it up.
 
 ## Usage
 
