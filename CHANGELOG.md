@@ -15,3 +15,9 @@ All notable changes to `laraditz/bayar` will be documented in this file
 - Add `PaymentData` and `PaymentResponseData` DTO.
 - Add `AtomeCallbackReceived` event.
 - Add `Atome` provider.
+
+
+## 0.0.0 - 2023-08-31
+
+### Changed
+- Fix bug wrong property name for statusDescription
