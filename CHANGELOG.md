@@ -36,3 +36,8 @@ All notable changes to `laraditz/bayar` will be documented in this file
 
 ### Added
 - Add `callback_url` to config to overwrite default callback URL.
+
+## 0.0.5 - 2023-09-07
+
+### Changed
+- Update callback logic to allow refund after paid.

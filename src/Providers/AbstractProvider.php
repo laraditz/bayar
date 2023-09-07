@@ -232,17 +232,27 @@ abstract class AbstractProvider
     {
         $paymentResponse = $this->formattedPaymentResponseData();
         $bayarPayment = $this->getPaymentRecord($paymentResponse?->referenceId);
+        $allowUpdate = true;
 
         if ($paymentResponse && $bayarPayment) {
-            if (
-                ($bayarPayment->payment_status === null || $bayarPayment->payment_status !== $paymentResponse->status)
-                && $bayarPayment->payment_status !== PaymentStatus::Completed
-            ) {
-                $bayarPayment->update([
-                    'payment_status' => $paymentResponse->status,
-                    'payment_description' => $paymentResponse?->statusDescription,
-                    'callback_response' => $paymentResponse?->metadata,
-                ]);
+            if ($bayarPayment->payment_status === null || $bayarPayment->payment_status !== $paymentResponse->status) {
+
+                if (
+                    $bayarPayment->payment_status === PaymentStatus::Completed
+                    && !in_array($paymentResponse->status, [PaymentStatus::Refunded]) // only allow refunded after paid
+                ) {
+                    $allowUpdate = false;
+                } else if ($bayarPayment->payment_status === PaymentStatus::Completed) { // if already completed, cannot change status anymore
+                    $allowUpdate = false;
+                }
+
+                if ($allowUpdate === true) {
+                    $bayarPayment->update([
+                        'payment_status' => $paymentResponse->status,
+                        'payment_description' => $paymentResponse?->statusDescription,
+                        'callback_response' => $paymentResponse?->metadata,
+                    ]);
+                }
             }
         }
     }
