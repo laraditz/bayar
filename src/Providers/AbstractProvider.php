@@ -203,7 +203,7 @@ abstract class AbstractProvider
 
     public function getCallbackUrl(): ?string
     {
-        return route('bayar.callback', ['provider' => $this->getDriver()]);
+        return config('bayar.callback_url') ?? route('bayar.callback', ['provider' => $this->getDriver()]);
     }
 
     private function linkExpiresAt()
