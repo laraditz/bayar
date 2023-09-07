@@ -41,3 +41,8 @@ All notable changes to `laraditz/bayar` will be documented in this file
 
 ### Changed
 - Update callback logic to allow refund after paid.
+
+## 0.0.6 - 2023-09-07
+
+### Changed
+- Fix bug on callback logic.
