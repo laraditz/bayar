@@ -29,5 +29,10 @@ All notable changes to `laraditz/bayar` will be documented in this file
 
 ## 0.0.3 - 2023-09-07
 
-### Changed
+### Added
 - Add `direct_return` to config so that can bypass package return url.
+
+## 0.0.4 - 2023-09-07
+
+### Added
+- Add `callback_url` to config to overwrite default callback URL.
