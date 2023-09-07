@@ -9,4 +9,5 @@ return [
     'middleware' => ['api'],
     'link_expires_in' => env('BAYAR_LINK_EXPIRES_IN', 5), // in minutes
     'link_visit_limit' => env('BAYAR_LINK_VISIT_LIMIT', 1),
+    'direct_return' => env('BAYAR_DIRECT_RETURN', false),
 ];

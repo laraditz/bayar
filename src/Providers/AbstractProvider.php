@@ -169,7 +169,7 @@ abstract class AbstractProvider
 
     protected function getReturnUrl(BayarPayment $payment)
     {
-        return route('bayar.done', ['payment' => $payment]);
+        return config('bayar.direct_return') === true ? $payment->return_url : route('bayar.done', ['payment' => $payment]);
     }
 
     private function setRedirectUrl(mixed $response): void
