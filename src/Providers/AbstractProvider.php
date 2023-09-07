@@ -242,8 +242,6 @@ abstract class AbstractProvider
                     && !in_array($paymentResponse->status, [PaymentStatus::Refunded]) // only allow refunded after paid
                 ) {
                     $allowUpdate = false;
-                } else if ($bayarPayment->payment_status === PaymentStatus::Completed) { // if already completed, cannot change status anymore
-                    $allowUpdate = false;
                 }
 
                 if ($allowUpdate === true) {
