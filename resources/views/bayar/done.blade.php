@@ -64,7 +64,7 @@
             </div>
 
               <div class="flex justify-center mt-4">
-                <form method="POST" action="{{ $payment->return_url }}" id="form-complete">
+                <form method="{{ $method }}" action="{{ $payment->return_url }}" id="form-complete">
                 @if(isset($data) && $data)
                 @foreach($data as $name=>$value)
                 <input type="hidden" name="{{ $name }}" value="{{ $value }}" class="form-control mt-4
