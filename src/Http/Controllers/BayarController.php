@@ -24,11 +24,15 @@ class BayarController extends Controller
 
     public function done(BayarPayment $payment, Request $request)
     {
+        $data = $request->all();
+
         $paymentData = \Bayar::driver($payment->driver)
-            ->paymentResponseData($request->all(), $payment)
+            ->paymentResponseData($data, $payment)
             ->returnResponse();
 
-        return view('bayar::bayar.done', compact('payment', 'paymentData'));
+        $method = $data && count($data) > 0 ? 'POST' : 'GET';
+
+        return view('bayar::bayar.done', compact('payment', 'paymentData', 'data', 'method'));
     }
 
     public function callback(string $provider, Request $request)
