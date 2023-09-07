@@ -26,3 +26,8 @@ All notable changes to `laraditz/bayar` will be documented in this file
 
 ### Changed
 - Check request data on payment done page to determine redirect method.
+
+## 0.0.3 - 2023-09-07
+
+### Changed
+- Add `direct_return` to config so that can bypass package return url.
