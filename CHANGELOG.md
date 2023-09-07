@@ -17,7 +17,12 @@ All notable changes to `laraditz/bayar` will be documented in this file
 - Add `Atome` provider.
 
 
-## 0.0.0 - 2023-08-31
+## 0.0.1 - 2023-08-31
 
 ### Changed
 - Fix bug wrong property name for statusDescription
+
+## 0.0.2 - 2023-09-07
+
+### Changed
+- Check request data on payment done page to determine redirect method.
